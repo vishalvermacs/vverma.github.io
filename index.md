@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+## Welcome to Leet Code Solutions in C#
 
-You can use the [editor on GitHub](https://github.com/vishalvermacs/vverma.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+https://leetcode.com/problems/two-sum/
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 1. Two Sum
 
-### Markdown
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+> Given nums = [2, 7, 11, 15], target = 9. Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```c#
+public static class TwoSum
+    {
+        public static int[] TwoSumAns(int[] nums, int target)
+        {
+            var hashMap = new Dictionary<int, int>();
+            for (int i = 0; i <= nums.Length; i++)
+            {
+                var complement = target - nums[i];
+                if (hashMap.ContainsKey(complement))
+                {
+                    return new int[] { hashMap[complement], i };
+                }
+                hashMap.Add(nums[i], i);
+            }
+            return new int[] { -1 };
+        }
+    }
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vishalvermacs/vverma.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+https://www.linkedin.com/in/vishalvermacs/
