@@ -1,8 +1,8 @@
 ## Welcome to Leet Code Solutions in C#
 
-https://leetcode.com/problems/two-sum/
+https://leetcode.com/problemset/all/?difficulty=Easy
 
-### 1. Two Sum
+### 1. Two Sum - https://leetcode.com/problems/two-sum/
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -26,6 +26,30 @@ public static class TwoSum
                 hashMap.Add(nums[i], i);
             }
             return new int[] { -1 };
+        }
+    }
+```
+
+### 2. Reverse Integer - https://leetcode.com/problems/reverse-integer/
+Reverse digits of an integer.
+
+>Example1: x = 123, return 321
+
+>Example2: x = -123, return -321
+
+```c#
+public static class ReverseInt
+    {
+        public static int ReverseIntAns(int n)
+        {            
+            int rev = 0;
+            while (n > 0)
+            {
+                int rem = n % 10;
+                rev = rev * 10 + rem;
+                n /= 10;
+            }
+            return rev;
         }
     }
 ```
